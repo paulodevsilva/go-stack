@@ -1,0 +1,6 @@
+./desafio-1/node_modules
+./go-barber/node_modules
+./go-barber/.env
+
+.env
+node_modules
