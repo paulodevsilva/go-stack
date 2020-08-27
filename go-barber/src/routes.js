@@ -1,9 +1,15 @@
-import { Router } from 'express'
+import { Router } from 'express';
+
+import UserController from './app/controllers/UserController';
+import SessionController from './app/controllers/SessionController';
+import authMiddleware from './app/middlewares/auth';
 
 const routes = Router();
 
-routes.get('/', async (req, res) => {
-  return res.json({ message: 'ggasdg' });
-})
+routes.post('/users', UserController.store);
+routes.post('/sessions', SessionController.store);
+routes.use(authMiddleware);
+routes.put('/users', UserController.update);
+// routes.delete('/users/:id', UserController.delete);
 
 export default routes;

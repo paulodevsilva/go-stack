@@ -15,6 +15,7 @@ const verify = (req, res, next) => {
 const logger = (req, res, next) => {
   const msg = `${req.method} - ${req.originalUrl}`
   console.log(msg)
+  console.count('req')
   next()
 }
 

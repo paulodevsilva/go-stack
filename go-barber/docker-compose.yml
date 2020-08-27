@@ -2,7 +2,7 @@ version: "3"
 services:
   db:
     image: postgres
-    container_name: postgresdb
+    container_name: ${CONTAINER_NAME}
     restart: always
     ports:
       - ${DB_PORT}:5432
